@@ -1,11 +1,17 @@
-import streamlit as st
-import hashlib
-from cryptography.fernet import Fernet
-import time
-from datetime import datetime, timedelta
-import json
-import os
-import base64
+try:
+    import streamlit as st
+    import hashlib
+    from cryptography.fernet import Fernet
+    import time
+    from datetime import datetime, timedelta
+    import json
+    import os
+    import base64
+    import io
+    import pandas as pd
+except ImportError as e:
+    st.error(f"Missing required package: {e}. Please install it with: pip install cryptography pandas")
+    st.stop()
 
 # Configuration
 MAX_ATTEMPTS = 3
